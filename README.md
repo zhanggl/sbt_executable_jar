@@ -6,7 +6,8 @@ A sbt plugin to create a executable jar when doing a package. And the dependency
 ## Usage
 In your `plugin.sbt` 
 ```scala
-addSbtPlugin("zhanggl" %% "sbt_executable_pckg" % "1.0")
+lazy val root = project.in( file(".") ).dependsOn( exeJarPlugin )
+lazy val exeJarPlugin = uri("git://github.com/zhanggl/sbt_executable_jar")
 ```
 
 and `build.sbt`
